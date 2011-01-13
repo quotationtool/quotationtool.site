@@ -1,0 +1,34 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope">
+
+  <include file="dependencies.zcml"/>
+  
+  <class class=".site.QuotationtoolSite">
+    <implements
+        interface="zope.location.interfaces.ILocation
+		   zope.annotation.interfaces.IAttributeAnnotatable"
+	/>
+    <allow
+        interface="zope.container.interfaces.IReadContainer" 
+        />
+    <require
+        permission="zope.ManageSite"
+        interface="zope.container.interfaces.IWriteContainer"
+        />
+    <allow
+	attributes="getSiteManager"
+	/>
+    <require
+	permission="zope.ManageSite"
+	attributes="setSiteManager"
+	/>
+    <require
+        permission="zope.ManageSite"
+	set_schema=".interfaces.IQuotationtoolSite"
+	/>
+  </class>
+
+  <subscriber
+      handler=".site.setSiteManagerWhenAdded"/>
+
+</configure>
