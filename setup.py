@@ -13,7 +13,7 @@ name='quotationtool.site'
 
 setup(
     name = name,
-    version='0.1',
+    version='0.1.0',
     description="Site folder for the quotationtool application",
     long_description=(
         read('README')
@@ -58,7 +58,6 @@ setup(
     extras_require = dict(
         test = [
             'zope.testing',
-            'zope.testrunner',
             'zope.configuration',
             ],
         ),

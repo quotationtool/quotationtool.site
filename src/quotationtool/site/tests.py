@@ -1,6 +1,5 @@
 import unittest
 import doctest
-#import zope.testing
 from zope.component.testing import setUp, tearDown, PlacelessSetup
 from zope.configuration.xmlconfig import XMLConfig
 
